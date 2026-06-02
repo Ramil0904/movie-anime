@@ -127,18 +127,59 @@ export default function DetailsModal({
           </p>
 
           {modalCast && modalCast.length > 0 && (
-            <div>
-              <h4 style={{ fontSize: '15px', marginBottom: '8px', color: '#ffb703' }}>В главных ролях:</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
-                {modalCast.map(actor => (
-                  <div key={actor.id} style={{ background: '#1c1c1c', padding: '6px 10px', borderRadius: '6px', border: '1px solid #222' }}>
-                    <div style={{ fontSize: '13px', fontWeight: '500', color: '#fff' }}>{actor.name}</div>
-                    <div style={{ fontSize: '11px', color: '#777' }}>{actor.character}</div>
-                  </div>
-                ))}
+         <div>
+             <h4
+                style={{
+                  fontSize: '15px',
+                  marginBottom: '8px',
+                  color: '#ffb703'
+                }}
+                >
+               {contentType === 'anime' || contentType === 'cartoon'
+                  ? 'Актёры озвучивания:'
+                  : 'В главных ролях:'}
+             </h4>
+
+          <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '8px'
+              }}
+              >
+             {modalCast.map(actor => (
+          <div
+              key={actor.id}
+              style={{
+                background: '#1c1c1c',
+                padding: '6px 10px',
+                borderRadius: '6px',
+                border: '1px solid #222'
+              }}
+              >
+          <div
+            style={{
+              fontSize: '13px',
+              fontWeight: '500',
+              color: '#fff'
+            }}
+          >
+            {actor.name}
+          </div>
+
+          <div
+            style={{
+              fontSize: '11px',
+              color: '#777'
+            }}
+          >
+            {actor.character}
               </div>
             </div>
-          )}
+          ))}
+          </div>
+        </div>
+        )}
 
           <hr style={{ border: 'none', borderTop: '1px solid #222', margin: '5px 0' }} />
 
