@@ -131,11 +131,11 @@
   width: 100%;
 }
 .header-search-box {
-  position: absolute;
-  right: 330px; 
-  top: 40px; 
-  width: 320px; 
-  z-index: 10;
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+  margin-left: auto;   /* Автоматический отступ слева оттолкнет поиск вправо */
+  margin-right: 40px;  /* Задает фиксированное расстояние до блока авторизации */
 }
 .header-search-input {
   width: 100%;
@@ -158,14 +158,11 @@
     transform: none;
     padding: 0 10px;
     box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
-.header-search-input {
-  width: 100%;
-}
-.header-search-input {
-  width: 100%;
-}
+
 .header-auth-block {
   display: flex;
   align-items: center;
